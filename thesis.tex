@@ -1,0 +1,123 @@
+\documentclass{my_thesis}
+% MUST BE COMPILED IN PDF, NOT DVI
+
+
+\def\defcolor{goldfish}         % Definition color
+\def\theocolor{pond}            % Theorem color
+\def\excolor{pond}              % Example color
+\def\generaltheocolor{beach}    % Color for corollaries, lemmas, propositions, etc
+
+%% Tables
+\def\tableheadcolorA{pond}
+\def\tableheadcolorB{beach!80}
+\def\shade{beach!70} % For alternating table colors
+\renewcommand{\arraystretch}{1.1} % for more space between rows of tables
+
+% For alternating colors in table columns
+\newcolumntype{C}{>{\columncolor{\shade}}c} % center
+\newcolumntype{L}{>{\columncolor{\shade}}l} % left
+
+\usepackage{lipsum}
+
+\title{The title}
+\author{The author}
+\date{The date}
+
+\begin{document}
+\maketitle
+
+\chapter{A chapter}
+
+\section{Theorem environments}
+
+\begin{theorem}
+{Description}
+{refthis}
+This is a theorem.
+\end{theorem}
+\begin{proof}
+    This is the proof.
+\end{proof}
+Reference to \Cref{theorem:refthis}
+
+\begin{lemma}
+{Description}
+{refthis}
+This is a lemma.
+\end{lemma}
+Reference to \Cref{lemma:refthis}
+
+\begin{proposition}
+{Description}
+{refthis}
+This is a proposition.
+\end{proposition}
+Reference to \Cref{proposition:refthis}
+
+\begin{definition}
+{Description}
+{refthis}
+This is a definition.
+\end{definition}
+Reference to \Cref{definition:refthis}
+
+\begin{corollary}
+{Description}
+{refthis}
+This is a corollary.
+\end{corollary}
+Reference to \Cref{corollary:refthis}
+
+\begin{example}
+{Description}
+{refthis}
+This is a example.
+\end{example}
+Reference to \Cref{example:refthis}
+
+\begin{remark}
+{Description}
+{refthis}
+This is a remark.
+\end{remark}
+Reference to \Cref{remark:refthis}
+
+\section{Tables}
+Using tableheadcolorA
+\[
+    \rowcolors{2}{\shade}{white} % Alternating row colors, starting from row 2
+    \begin{array}{llll}
+    \rowcolor{\tableheadcolorA} % Header color
+        1 & 2 & 3 & 4\\
+        a & b & c & d\\
+        a & b & c & d\\
+        a & b & c & d\\
+        a & b & c & d\\
+        a & b & c & d\\
+        a & b & c & d\\
+        a & b & c & d\\
+        a & b & c & d\\
+        a & b & c & d
+    \end{array}
+\]
+
+Using tableheadcolorB
+
+\[
+    \rowcolors{2}{\shade}{white} % Alternating row colors, starting from row 2
+    \begin{array}{llll}
+    \rowcolor{\tableheadcolorB} % Header color
+        1 & 2 & 3 & 4\\
+        a & b & c & d\\
+        a & b & c & d\\
+        a & b & c & d\\
+        a & b & c & d\\
+        a & b & c & d\\
+        a & b & c & d\\
+        a & b & c & d\\
+        a & b & c & d\\
+        a & b & c & d
+    \end{array}
+\]
+
+\end{document}
